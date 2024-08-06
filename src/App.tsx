@@ -6,7 +6,7 @@ const BASE_API_URL = 'http://localhost:3037'
 
 function App() {
 
-  const [OLLAMA_RESPONSE] = useState<string>("")
+  const [OLLAMA_RESPONSE, SET_OLLAMA_RESPONSE] = useState<string>("")
   const [PROMPT, SET_PROMPT] = useState<string>("")
   const [CHAT_HISTORY, SET_CHAT_HISTORY] = useState<{ role: string, content: string }[]>([])
   const [IS_HISTORY_VISIBLE, SET_IS_HISTORY_VISIBLE] = useState<boolean>(false)//
@@ -16,6 +16,7 @@ function App() {
       try {
         const RESPONSE = await axios.post(`${BASE_API_URL}/generate`, { prompt: PROMPT }) // JSON body should be { prompt: PROMPT }
         const MESSAGE = RESPONSE.data.message
+        SET_OLLAMA_RESPONSE(MESSAGE)
         SET_CHAT_HISTORY([...CHAT_HISTORY, { role: 'user', content: PROMPT }, { role: 'assistant', content: MESSAGE }])
         SET_PROMPT("")
       } catch (error) {
@@ -25,8 +26,8 @@ function App() {
 
   const HANDLE_BUTTON_HISTORY = async () => {
     try {
-      const RESPONSE = await axios.get(`${BASE_API_URL}/message-history`) // JSON body should be { prompt: PROMPT }
-      const MESSAGE = RESPONSE.data
+      const OLLAMA_RESPONSE = await axios.get(`${BASE_API_URL}/message-history`) // JSON body should be { prompt: PROMPT }
+      const MESSAGE = OLLAMA_RESPONSE.data
       SET_CHAT_HISTORY(MESSAGE)
       SET_CHAT_HISTORY(MESSAGE)
       SET_IS_HISTORY_VISIBLE(!IS_HISTORY_VISIBLE)
