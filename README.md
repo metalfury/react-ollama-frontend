@@ -1,12 +1,12 @@
 # React Ollama Frontend
 
-This project is a React application developed to be used with [holo-ollama-backend](https://github.com/metalfury/holo-ollama-backend). It allows users to send messages and view message history.
+This project is a React application developed to be used with [hono-ollama-backend](https://github.com/metalfury/hono-ollama-backend). It allows users to send messages and view message history.
 
 ## Requirements
 
 - Node.js
 - npm or yarn
-- [holo-ollama-backend](https://github.com/metalfury/holo-ollama-backend)
+- [hono-ollama-backend](https://github.com/metalfury/hono-ollama-backend)
 
 ## Installation
 
@@ -24,7 +24,7 @@ This project is a React application developed to be used with [holo-ollama-backe
    ```
 
 3. Run the backend:
-   Clone the [holo-ollama-backend](https://github.com/metalfury/holo-ollama-backend) project and follow the instructions to run it.
+   Clone the [hono-ollama-backend](https://github.com/metalfury/hono-ollama-backend) project and follow the instructions to run it.
 
 4. Start the frontend:
    ```bash
@@ -40,7 +40,7 @@ This project is a React application developed to be used with [holo-ollama-backe
 
 ## Integration with Backend
 
-This project is designed to work with [holo-ollama-backend](https://github.com/metalfury/holo-ollama-backend). The backend API is used to process messages and provide message history.
+This project is designed to work with [hono-ollama-backend](https://github.com/metalfury/hono-ollama-backend). The backend API is used to process messages and provide message history.
 
 ## Contributing
 
